@@ -74,7 +74,7 @@ jobs:
       - name: Install YAMLLint
         run: pip install yamllint
 
-      - run: yamllint docs
+      - run: yamllint openapi/
 
   # Neuer Build Job
 #  build:
