@@ -46,6 +46,8 @@ jobs:
       - uses: siderolabs/conform@v0.1.0-alpha.27
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          config_path: "./config/checkstyle/conform.yaml"
+
 
   # Neuer Build Job
   build:
