@@ -48,41 +48,41 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
   # Neuer Build Job
-  build:
-    runs-on: ubuntu-latest
-    name: Build and Package Application
-    needs: test  # Optional: Abhängigkeit zum "test" Job
-    strategy:
-      max-parallel: 4
-      matrix:
-        java-version: ["22"]
+#  build:
+#    runs-on: ubuntu-latest
+#    name: Build and Package Application
+#    needs: test  # Optional: Abhängigkeit zum "test" Job
+#    strategy:
+#      max-parallel: 4
+#      matrix:
+#        java-version: ["22"]
 
-    steps:
+#    steps:
       # 1. Check out the repository
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+#      - name: Checkout repository
+#       uses: actions/checkout@v4
+#        with:
+#          fetch-depth: 0
 
       # 2. Set up Java
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          java-version: "${{ matrix.java-version }}"
-          distribution: "corretto"
+#      - name: Setup Java
+#        uses: actions/setup-java@v4
+#        with:
+#          java-version: "${{ matrix.java-version }}"
+#          distribution: "corretto"
 
       # 3. Set up Gradle
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
+#      - name: Setup Gradle
+#        uses: gradle/actions/setup-gradle@v4
 
       # 4. Build the application with bootJar
-      - name: Build Jar
-        run: ./gradlew bootJar
+#      - name: Build Jar
+#        run: ./gradlew bootJar
 
       # 5. Upload the JAR as an artifact (optional)
-      - name: Upload JAR as an artifact
-        if: success()  # Nur wenn der Build erfolgreich ist
-        uses: actions/upload-artifact@v4
-        with:
-          name: spring-boot-jar  # Name des Artifacts
-          path: build/libs/*.jar  # Pfad zur erstellten JAR-Datei
+ #     - name: Upload JAR as an artifact
+ #       if: success()  # Nur wenn der Build erfolgreich ist
+ #       uses: actions/upload-artifact@v4
+ #       with:
+ #         name: spring-boot-jar  # Name des Artifacts
+ #         path: build/libs/*.jar  # Pfad zur erstellten JAR-Datei
