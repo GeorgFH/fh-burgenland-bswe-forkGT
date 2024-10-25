@@ -47,6 +47,32 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
+  spectral:
+    name: Spectral Linter
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: jaxxstorm/action-install-gh-release@v1.12.0
+        with:
+          repo: stoplightio/spectral
+          extension-matching: disable
+          rename-to: spectral
+          chmod: 0755
+
+      - run: |
+          spectral lint 'docs/**/*.yaml' --fail-severity info
+          spectral lint 'docs/**/*.yml' --fail-severity info
+
+  yamllint:
+    name: YAMLLint
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - run: yamllint docs
+
   # Neuer Build Job
 #  build:
 #    runs-on: ubuntu-latest
