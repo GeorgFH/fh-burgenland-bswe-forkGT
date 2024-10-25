@@ -71,6 +71,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install YAMLLint
+        run: pip install yamllint
+
       - run: yamllint docs
 
   # Neuer Build Job
