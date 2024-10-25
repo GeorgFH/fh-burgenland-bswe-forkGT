@@ -20,7 +20,7 @@ public class StringControllerTest {
 
     @Test
     public void testToUpperCase() {
-        when(service.toUpperCase("abc")).thenReturn("abc");
+        when(service.toUpperCase("abc")).thenReturn("ABC");
 
         assertEquals("ABC", controller.upper("abc"));
         verify(service, times(1)).toUpperCase("abc");

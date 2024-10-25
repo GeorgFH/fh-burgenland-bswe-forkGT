@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 public class StringService {
     // FIXME: add javadoc
     public String toUpperCase(final String string) {
-        // FIXME: implement
-        return string;
+        if (string == null) {
+            return null; // Rückgabe von null, wenn der Eingabestring null ist.
+        }
+        return string.toUpperCase();
     }
 }

@@ -24,7 +24,7 @@ class StringControllerHttpMockTest {
 
     @Test
     void testToUpperCase() throws Exception {
-        when(stringService.toUpperCase("abc")).thenReturn("abc");
+        when(stringService.toUpperCase("abc")).thenReturn("ABC");
 
         mvc.perform(MockMvcRequestBuilders.get("/upper?string=abc")).andExpect(MockMvcResultMatchers.status().isOk())
                 .andExpect(MockMvcResultMatchers.content().string(Matchers.equalTo("ABC")));

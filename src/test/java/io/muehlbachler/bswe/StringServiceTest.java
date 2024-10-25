@@ -8,7 +8,7 @@ public class StringServiceTest {
 
     @Test
     public void testToUpperCase() {
-        assertEquals(1, stringService.toUpperCase("abc"), "abc toUpperCase should be ABC");
+        assertEquals("ABC", stringService.toUpperCase("abc"), "abc toUpperCase should be ABC");
     }
 
     // FIXME: implement more tests
