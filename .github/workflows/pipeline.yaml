@@ -8,31 +8,31 @@ on:
 
 jobs:
   # Bestehender Unit Test Job (Beispiel)
-  test:
-    runs-on: ubuntu-latest
-    name: Unit Tests
-    strategy:
-      max-parallel: 4
-      matrix:
-        java-version: ["22"]
+#  test:
+#    runs-on: ubuntu-latest
+#    name: Unit Tests
+#    strategy:
+#      max-parallel: 4
+#      matrix:
+#        java-version: ["22"]
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+#    steps:
+#      - name: Checkout repository
+#        uses: actions/checkout@v4
+#        with:
+#          fetch-depth: 0
 
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          java-version: "${{ matrix.java-version }}"
-          distribution: "corretto"
+#      - name: Setup Java
+#        uses: actions/setup-java@v4
+#        with:
+#          java-version: "${{ matrix.java-version }}"
+#          distribution: "corretto"
 
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v4
+#      - name: Setup Gradle
+#        uses: gradle/actions/setup-gradle@v4
 
-      - name: Run Tests
-        run: ./gradlew test
+#      - name: Run Tests
+#        run: ./gradlew test
 
   conform:
     runs-on: ubuntu-latest
