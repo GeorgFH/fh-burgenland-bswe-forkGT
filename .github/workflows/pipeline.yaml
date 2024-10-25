@@ -47,8 +47,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-
-
   # Neuer Build Job
   build:
     runs-on: ubuntu-latest
